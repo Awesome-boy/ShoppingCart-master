@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EasyGoToolBar">
+        <attr name="rightButtonIcon" format="reference"></attr>
+        <attr name="rightButtonText" format="string"></attr>
+        <attr name="isShowSearchView" format="boolean"></attr>
+        <attr name="rightButtonWidth" format="dimension"></attr>
+        <attr name="rightButtonHeight" format="dimension"></attr>
+    </declare-styleable>
+    <declare-styleable name="CircularBar">
+        <attr name="circularColor" format="color" />
+        <attr name="circularBackgroundColor" format="color" />
+        <attr name="circularWidth" format="dimension" />
+    </declare-styleable>
+</resources>

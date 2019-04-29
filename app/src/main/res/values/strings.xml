@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PayDemo</string>
+    <string name="menu_name">Menu</string>
+    <string name="dish_name">Name</string>
+    <string name="shopcart">Cart</string>
+    <string name="clear">Clear</string>
+    <string name="pay">Pay</string>
+    <string name="common_error">Oops, loading failed...</string>
+    <string name="click_retry">Click Retry</string>
+    <string name="receiver">Receiver:</string>
+    <string name="create_order">Confirm Order</string>
+    <string name="receive_adress">Shipping address:</string>
+    <string name="tips">(If the goods are inconvenient, you can choose free collection service)</string>
+    <string name="pay_choice">payment method</string>
+    <string name="alipay">Alipay</string>
+    <string name="alipay_tips">Support Alipay, online banking users</string>
+    <string name="wechat_pay">WeChat payment</string>
+    <string name="wechat_pay_tips">Secure with WeChat, safe and convenient</string>
+    <string name="baidu_pay">Baidu wallet</string>
+    <string name="baidu_pay_tips">Baidu Secure Payment Service</string>
+    <string name="pay_money">Payment paid: ¥%1$.1f</string>
+    <string name="commit_order">Submit orders</string>
+
+</resources>

@@ -32,7 +32,8 @@
     <dimen name="item_dish_horizontal_margin">15dp</dimen>
     <dimen name="item_dish_small_horizontal_margin">2dp</dimen>
     <dimen name="item_dish_menu_hight">25dp</dimen>
-    <dimen name="item_dish_hight">55dp</dimen>
+    <dimen name="item_dish_hight">110dp</dimen>
+    <dimen name="item_dish_image">50dp</dimen>
     <dimen name="item_dish_account_width">30dp</dimen>
     <dimen name="item_dish_circle_size">25dp</dimen>
 
@@ -45,4 +46,8 @@
     <dimen name="shopping_cart_total_price_word_size">20sp</dimen>
     <dimen name="shopping_cart_small_size">15sp</dimen>
     <dimen name="shopping_cart_bottom_recycle_height">250dp</dimen>
+
+    <dimen name="item_dash_large">60dp</dimen>
+
+    <dimen name="menu_image_radius">6dp</dimen>
 </resources>

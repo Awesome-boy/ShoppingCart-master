@@ -1,10 +1,11 @@
 package com.kx.elemeapplication.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -58,6 +59,8 @@ public class LeftMenuAdapter extends RecyclerView.Adapter {
         DishMenu dishMenu = mMenuList.get(position);
         LeftMenuViewHolder viewHolder = (LeftMenuViewHolder)holder;
         viewHolder.menuName.setText(dishMenu.getMenuName());
+        viewHolder.mIvDashMenu.setImageResource(dishMenu.getResId());
+
         if(mSelectedNum==position){
             viewHolder.menuLayout.setSelected(true);
         }else{
@@ -85,6 +88,7 @@ public class LeftMenuAdapter extends RecyclerView.Adapter {
 
         TextView menuName;
         LinearLayout menuLayout;
+        ImageView mIvDashMenu;
 
         public LeftMenuViewHolder(final View itemView) {
             super(itemView);
@@ -98,6 +102,7 @@ public class LeftMenuAdapter extends RecyclerView.Adapter {
                     notifyItemSelected(clickPosition);
                 }
             });
+            mIvDashMenu = (ImageView) itemView.findViewById(R.id.iv_dash_menu);
         }
     }
 

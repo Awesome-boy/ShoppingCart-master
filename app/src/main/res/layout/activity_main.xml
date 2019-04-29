@@ -3,10 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_layout"
     tools:context="com.kx.elemeapplication.MainActivity">
+    <com.kx.elemeapplication.wiget.EasyGoToolBar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:minHeight="?attr/actionBarSize"
+        app:contentInsetEnd="56dp"
+        app:isShowSearchView="true"
+        app:navigationIcon="@drawable/icon_back_32px"
 
+        />
     <LinearLayout
+
         android:id="@+id/shopping_cart_bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/shopping_cart_height"
@@ -28,6 +40,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_below="@+id/toolbar"
         android:layout_above="@+id/shopping_cart_bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:background="@color/light_white">
+            android:background="@color/white">
         </androidx.recyclerview.widget.RecyclerView>
 
         <RelativeLayout
@@ -49,7 +62,7 @@
                 android:id="@+id/right_menu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/white">
+                android:background="@color/white">
             </androidx.recyclerview.widget.RecyclerView>
 
             <include layout="@layout/right_menu_item"/>

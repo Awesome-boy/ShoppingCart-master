@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <EditText
         android:id="@+id/mSearchView"
@@ -11,11 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_centerVertical="true"
-        android:gravity="center"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="60dp"
         android:drawableLeft="@mipmap/icon_search"
         style="@style/search_view"
-        android:hint="请输入搜索内容"
-
+        android:textCursorDrawable="@null"
+        android:hint="Please enter the name"
+        android:textColorHint="@color/light_white"
         android:visibility="gone"
         />
 

@@ -18,8 +18,8 @@ public abstract class BaseActivity extends AppCompatActivity  {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        ToastMgr.init(this);
         ViewUtils.inject(this);
+        ToastMgr.init(this);
         initView();
         initData();
         initListener();

@@ -26,12 +26,34 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
     private RadioButton mRbAlipay;
     private RadioButton mRbWechat;
     private RadioButton mRbBd;
-
+    @ViewInject(R.id.rl_visa)
+    RelativeLayout  mLayoutVisa;
+    @ViewInject(R.id.rl_union)
+    RelativeLayout  mLayoutUnion;
+    @ViewInject(R.id.rl_paypal)
+    RelativeLayout mLayoutPayPal;
+    @ViewInject(R.id.rb_visa)
+    RadioButton mRbVisa;
+    @ViewInject(R.id.rb_union)
+    RadioButton mRbUnion;
+    @ViewInject(R.id.rb_paypal)
+    RadioButton mRbPayPal;
     /**
      * 银联支付渠道
      */
-    private static final String CHANNEL_UPACP = "upacp";
+    private static final String CHANNEL_UNION = "union";
+
     /**
+     * paypal支付渠道
+     */
+    private static final String CHANNEL_PAYPAL_WAP = "paypal";
+
+    /**
+     * visa支付渠道
+     */
+    private static final String CHANNEL_VISA_WAP = "visa";
+    /**
+     *
      * 微信支付渠道
      */
     private static final String CHANNEL_WECHAT = "wx";
@@ -43,11 +65,8 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
      * 百度支付渠道
      */
     private static final String CHANNEL_BFB = "bfb";
-    /**
-     * 京东支付渠道
-     */
-    private static final String CHANNEL_JDPAY_WAP = "jdpay_wap";
-    private HashMap<String,RadioButton> channels = new HashMap<>(3);
+
+    private HashMap<String,RadioButton> channels = new HashMap<>(6);
     private String payChannel;
     @ViewInject(R.id.txt_name)
     TextView tv_name;
@@ -89,12 +108,21 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
         channels.put(CHANNEL_ALIPAY,mRbAlipay);
         channels.put(CHANNEL_WECHAT,mRbWechat);
         channels.put(CHANNEL_BFB,mRbBd);
+        channels.put(CHANNEL_UNION,mRbUnion);
+        channels.put(CHANNEL_PAYPAL_WAP,mRbPayPal);
+        channels.put(CHANNEL_VISA_WAP,mRbVisa);
         mLayoutAlipay.setOnClickListener(this);
         mLayoutWechat.setOnClickListener(this);
         mLayoutBd.setOnClickListener(this);
+        mLayoutUnion.setOnClickListener(this);
+        mLayoutPayPal.setOnClickListener(this);
+        mLayoutVisa.setOnClickListener(this);
         mRbAlipay.setChecked(true);
         mRbWechat.setChecked(false);
         mRbBd.setChecked(false);
+        mRbVisa.setChecked(false);
+        mRbUnion.setChecked(false);
+        mRbPayPal.setChecked(false);
         mLayoutAddr.setOnClickListener(this);
     }
 
@@ -107,6 +135,9 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
         channels.put(CHANNEL_ALIPAY,mRbAlipay);
         channels.put(CHANNEL_WECHAT,mRbWechat);
         channels.put(CHANNEL_BFB,mRbBd);
+        channels.put(CHANNEL_UNION,mRbUnion);
+        channels.put(CHANNEL_PAYPAL_WAP,mRbPayPal);
+        channels.put(CHANNEL_VISA_WAP,mRbVisa);
         String data = getResources().getString(R.string.pay_money);
         tv_total.setText(String.format(data,total));
     }
@@ -117,6 +148,9 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
             case R.id.rl_alipay:
             case R.id.rl_bd:
             case R.id.rl_wechat:
+            case R.id.rl_paypal:
+            case R.id.rl_union:
+            case R.id.rl_visa:
                 selectPayChannel(view.getTag().toString());
                 break;
             case R.id.rl_addr:

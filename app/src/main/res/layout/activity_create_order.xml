@@ -27,20 +27,20 @@
 
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:orientation="vertical">
+
             <RelativeLayout
                 android:id="@+id/rl_addr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
                 android:layout_below="@+id/toolbar"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/selector_list_item"
-                android:focusable="true"
                 android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
                 android:padding="@dimen/largePadding">
 
 
@@ -48,75 +48,77 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:singleLine="true"
-                            android:textSize="13sp"
                             android:text="@string/receiver"
                             android:textColor="@color/gray"
-                            />
+                            android:textSize="13sp" />
+
                         <TextView
                             android:id="@+id/txt_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:singleLine="true"
-                            android:textSize="13sp"
                             android:textColor="@color/gray"
-                            />
+                            android:textSize="13sp" />
+
                         <TextView
                             android:id="@+id/txt_phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:singleLine="true"
-                            android:textSize="13sp"
                             android:gravity="right"
+                            android:singleLine="true"
                             android:textColor="@color/gray"
-                            />
+                            android:textSize="13sp" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="@string/receive_adress"
-                            android:textSize="13sp"
-                            android:textColor="@color/gray"/>
+                            android:textColor="@color/gray"
+                            android:textSize="13sp" />
+
                         <TextView
                             android:id="@+id/txt_address"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:maxLines="2"
                             android:layout_marginLeft="10dp"
-                            android:gravity="center_vertical"
                             android:layout_marginTop="5dp"
-                            android:textSize="13sp"
+                            android:gravity="center_vertical"
+                            android:maxLines="2"
+                            android:text="wuhan"
                             android:textColor="@color/gray"
-                            />
+                            android:textSize="13sp" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:textSize="10sp"
                             android:text="@string/tips"
-                            android:textColor="@color/orange"/>
+                            android:textColor="@color/orange"
+                            android:textSize="10sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -124,20 +126,18 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icon_right_64"
                     android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_right_64" />
 
             </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                />
-
-
+                android:layout_marginTop="5dp" />
 
 
             <LinearLayout
@@ -145,232 +145,404 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/recycler_view"
-                android:orientation="vertical"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/selector_view_block"
+                android:orientation="vertical"
                 android:padding="@dimen/smallPadding">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textColor="@color/gray"
                     android:text="@string/pay_choice"
+                    android:textColor="@color/gray"
+                    android:textSize="15sp"
 
 
                     />
+
                 <View
                     style="@style/line_vertical"
-                    android:layout_marginTop="5dp"/>
-
+                    android:layout_marginTop="5dp" />
 
 
                 <RelativeLayout
                     android:id="@+id/rl_alipay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/selector_list_item"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:paddingTop="@dimen/smallPadding"
                     android:paddingBottom="@dimen/smallPadding"
-                    android:background="@drawable/selector_list_item"
-                    android:focusable="true"
-                    android:clickable="true"
                     android:tag="alipay">
-
 
 
                     <ImageView
                         android:id="@+id/icon_alipay"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_alipay_72"
-                        android:layout_centerVertical="true"
                         android:layout_alignParentLeft="true"
-                        />
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icon_alipay_72" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/icon_alipay"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/icon_alipay"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/alipay"
-                            android:textSize="15sp"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="@string/alipay_tips"
-                            android:textSize="14sp"
-                            android:textColor="@color/gray"/>
+                            android:textColor="@color/gray"
+                            android:textSize="14sp" />
 
 
                     </LinearLayout>
 
 
-
-
                     <RadioButton
                         android:id="@+id/rb_alipay"
+                        style="@style/radioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        style="@style/radioButton"
-                        android:tag="alipay"
                         android:checked="true"
                         android:clickable="false"
-                        />
+                        android:tag="alipay" />
 
 
                 </RelativeLayout>
+
                 <View
                     style="@style/line_vertical"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp" />
 
                 <RelativeLayout
                     android:id="@+id/rl_wechat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/selector_list_item"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:paddingTop="@dimen/smallPadding"
                     android:paddingBottom="@dimen/smallPadding"
-                    android:background="@drawable/selector_list_item"
-                    android:focusable="true"
-                    android:clickable="true"
                     android:tag="wx">
-
 
 
                     <ImageView
                         android:id="@+id/icon_wechat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_wechat_72"
-                        android:layout_centerVertical="true"
                         android:layout_alignParentLeft="true"
-                        />
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icon_wechat_72" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/icon_wechat"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/icon_wechat"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/wechat_pay"
-                            android:textSize="15sp"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="@string/wechat_pay_tips"
-                            android:textSize="14sp"
-                            android:textColor="@color/gray"/>
+                            android:textColor="@color/gray"
+                            android:textSize="14sp" />
 
 
                     </LinearLayout>
 
 
-
-
                     <RadioButton
                         android:id="@+id/rb_webchat"
+                        style="@style/radioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        style="@style/radioButton"
-                        android:tag="wx"
                         android:clickable="false"
-                        />
+                        android:tag="wx" />
 
 
                 </RelativeLayout>
 
                 <View
                     style="@style/line_vertical"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp" />
 
                 <RelativeLayout
                     android:id="@+id/rl_bd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/selector_list_item"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:paddingTop="@dimen/smallPadding"
                     android:paddingBottom="@dimen/smallPadding"
-                    android:background="@drawable/selector_list_item"
-                    android:focusable="true"
-                    android:clickable="true"
                     android:tag="bfb">
-
 
 
                     <ImageView
                         android:id="@+id/icon_bd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_bd_72"
-                        android:layout_centerVertical="true"
                         android:layout_alignParentLeft="true"
-                        />
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icon_bd_72" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/icon_bd"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/icon_bd"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/baidu_pay"
-                            android:textSize="15sp"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="@string/baidu_pay_tips"
-                            android:textSize="14sp"
-                            android:textColor="@color/gray"/>
+                            android:textColor="@color/gray"
+                            android:textSize="14sp" />
 
 
                     </LinearLayout>
 
 
-
-
                     <RadioButton
                         android:id="@+id/rb_bd"
+                        style="@style/radioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        style="@style/radioButton"
-                        android:tag="bfb"
                         android:clickable="false"
-                        />
+                        android:tag="bfb" />
 
 
                 </RelativeLayout>
+                <View
+                    style="@style/line_vertical"
+                    android:layout_marginTop="5dp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_union"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_list_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="@dimen/smallPadding"
+                    android:paddingBottom="@dimen/smallPadding"
+                    android:tag="union">
 
 
+                    <ImageView
+                        android:id="@+id/icon_union"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/unionpay" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/icon_union"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="UnionPay"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="union pay"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+
+                    <RadioButton
+                        android:id="@+id/rb_union"
+                        style="@style/radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:tag="union" />
+
+
+                </RelativeLayout>
+                <View
+                    style="@style/line_vertical"
+                    android:layout_marginTop="5dp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_paypal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_list_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="@dimen/smallPadding"
+                    android:paddingBottom="@dimen/smallPadding"
+                    android:tag="paypal">
+
+
+                    <ImageView
+                        android:id="@+id/icon_paypal"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/paypal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/icon_paypal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Paypal"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="paypal way"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+
+                    <RadioButton
+                        android:id="@+id/rb_paypal"
+                        style="@style/radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:tag="paypal" />
+
+
+                </RelativeLayout>
+                <View
+                    style="@style/line_vertical"
+                    android:layout_marginTop="5dp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_visa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_list_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingTop="@dimen/smallPadding"
+                    android:paddingBottom="@dimen/smallPadding"
+                    android:tag="visa">
+
+
+                    <ImageView
+                        android:id="@+id/icon_visa"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/visa" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/icon_visa"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Visa"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="visa pay"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+
+                    <RadioButton
+                        android:id="@+id/rb_visa"
+                        style="@style/radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:tag="visa" />
+
+
+                </RelativeLayout>
             </LinearLayout>
-
 
 
         </LinearLayout>

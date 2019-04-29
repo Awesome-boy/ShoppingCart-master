@@ -1,10 +1,12 @@
 package com.kx.elemeapplication;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.kx.elemeapplication.utils.ToastMgr;
+import com.lidroid.xutils.ViewUtils;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 /**
@@ -17,6 +19,7 @@ public abstract class BaseActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         ToastMgr.init(this);
+        ViewUtils.inject(this);
         initView();
         initData();
         initListener();

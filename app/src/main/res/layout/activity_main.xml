@@ -94,6 +94,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="right"
+        android:visibility="gone"
         android:background="@color/red" />
     <!--<com.jscheng.elemeapplication.Wiget.FakeAddImageView-->
         <!--android:id="@+id/right_dish_fake_add"-->

@@ -16,6 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.CreateOrderActivity"/>
+        <activity android:name=".view.AddressListActivity" />
+        <activity android:name=".view.AddressAddActivity"></activity>
     </application>
 
 </manifest>

@@ -20,5 +20,11 @@
     <string name="baidu_pay_tips">Baidu Secure Payment Service</string>
     <string name="pay_money">Payment paid: ¥%1$.1f</string>
     <string name="commit_order">Submit orders</string>
-
+    <string name="add_addresses">Fill in the shipping address</string>
+    <string name="restore">save</string>
+    <string name="telnum">Tel-Num</string>
+    <string name="contact_adress">Contact address</string>
+    <string name="detail_address">Address</string>
+    <string name="my_addresses">Manage the shipping address</string>
+    <string name="add_new_address">add new address</string>
 </resources>

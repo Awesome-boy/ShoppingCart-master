@@ -7,8 +7,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -21,6 +19,9 @@ import com.kx.elemeapplication.imp.ShopCartImp;
 import com.kx.elemeapplication.model.ShopCart;
 import com.kx.elemeapplication.utils.ToastMgr;
 import com.kx.elemeapplication.view.CreateOrderActivity;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 /**
@@ -85,8 +86,9 @@ public class ShopCartDialog extends Dialog implements View.OnClickListener,ShopC
             totalPriceTextView.setText("￥ "+shopCart.getShoppingTotalPrice());
             totalPriceNumTextView.setVisibility(View.VISIBLE);
             totalPriceNumTextView.setText(""+shopCart.getShoppingAccount());
-
+            bt_pay.setVisibility(View.VISIBLE);
         }else {
+            bt_pay.setVisibility(View.GONE);
             totalPriceTextView.setVisibility(View.GONE);
             totalPriceNumTextView.setVisibility(View.GONE);
         }

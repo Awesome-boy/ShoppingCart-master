@@ -1,6 +1,7 @@
 package com.kx.elemeapplication.view;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
@@ -18,12 +19,14 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
     private TextView tv_total;
     private Double total;
     private EasyGoToolBar mToolbar;
+    private RelativeLayout mLayoutAddr;
     private RelativeLayout mLayoutAlipay;
     private RelativeLayout mLayoutWechat;
     private RelativeLayout mLayoutBd;
     private RadioButton mRbAlipay;
     private RadioButton mRbWechat;
     private RadioButton mRbBd;
+
     /**
      * 银联支付渠道
      */
@@ -56,6 +59,8 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
     protected void initView() {
         tv_total = (TextView) findViewById(R.id.txt_total);
         mToolbar= (EasyGoToolBar) findViewById(R.id.toolbar);
+        mLayoutAddr= (RelativeLayout) findViewById(R.id.rl_addr);
+
         mLayoutAlipay= (RelativeLayout) findViewById(R.id.rl_alipay);
         mLayoutWechat= (RelativeLayout) findViewById(R.id.rl_wechat);
         mLayoutBd= (RelativeLayout) findViewById(R.id.rl_bd);
@@ -87,6 +92,7 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
         mRbAlipay.setChecked(true);
         mRbWechat.setChecked(false);
         mRbBd.setChecked(false);
+        mLayoutAddr.setOnClickListener(this);
     }
 
     @SuppressLint("StringFormatMatches")
@@ -102,7 +108,18 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        selectPayChannel(view.getTag().toString());
+        switch (view.getId()){
+            case R.id.rl_alipay:
+            case R.id.rl_bd:
+            case R.id.rl_wechat:
+                selectPayChannel(view.getTag().toString());
+                break;
+            case R.id.rl_addr:
+                Intent intent = new Intent(this,AddressListActivity.class);
+                startActivity(intent);
+                break;
+        }
+
     }
 
     private void selectPayChannel(String payChannel) {

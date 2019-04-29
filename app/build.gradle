@@ -21,8 +21,10 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:23.+'
+    implementation 'com.android.support:recyclerview-v7:23.4.0'
     implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
     implementation 'androidx.recyclerview:recyclerview:1.0.0-beta01'
     implementation 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
-
+    implementation 'com.jiechic.library:xUtils:2.6.14'
 }

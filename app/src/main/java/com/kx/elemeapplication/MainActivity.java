@@ -6,9 +6,6 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -35,6 +32,10 @@ import com.kx.elemeapplication.wiget.PointFTypeEvaluator;
 import com.kx.elemeapplication.wiget.ShopCartDialog;
 
 import java.util.ArrayList;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity implements LeftMenuAdapter.onItemSelectedListener,ShopCartImp,ShopCartDialog.ShopCartDialogImp, View.OnClickListener {
     private final static String TAG = "MainActivity";
@@ -308,8 +309,9 @@ public class MainActivity extends AppCompatActivity implements LeftMenuAdapter.o
             totalPriceTextView.setText("￥ "+shopCart.getShoppingTotalPrice());
             totalPriceNumTextView.setVisibility(View.VISIBLE);
             totalPriceNumTextView.setText(""+shopCart.getShoppingAccount());
-
+            bt_pay.setVisibility(View.VISIBLE);
         }else {
+            bt_pay.setVisibility(View.GONE);
             totalPriceTextView.setVisibility(View.GONE);
             totalPriceNumTextView.setVisibility(View.GONE);
         }

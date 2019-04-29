@@ -14,12 +14,14 @@
         android:layout_centerVertical="true"
         android:gravity="center_vertical"
         android:layout_marginLeft="20dp"
+        android:padding="10dp"
         android:layout_marginRight="60dp"
+        android:drawableTint="@color/deep_gray"
         android:drawableLeft="@mipmap/icon_search"
         style="@style/search_view"
         android:textCursorDrawable="@null"
         android:hint="Please enter the name"
-        android:textColorHint="@color/light_white"
+        android:textSize="12sp"
         android:visibility="gone"
         />
 

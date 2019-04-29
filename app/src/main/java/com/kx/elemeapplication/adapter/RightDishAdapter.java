@@ -1,7 +1,7 @@
 package com.kx.elemeapplication.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,6 +82,7 @@ public class RightDishAdapter extends RecyclerView.Adapter {
                 dishholder.right_dish_name_tv.setText(dish.getDishName());
                 dishholder.right_dish_price_tv.setText(dish.getDishPrice()+"");
                 dishholder.right_dish_layout.setContentDescription(position+"");
+                dishholder.mIvDash.setImageResource(dish.getResId());
 
                 int count = 0;
                 if(shopCart.getShoppingSingleMap().containsKey(dish)){
@@ -186,6 +187,7 @@ public class RightDishAdapter extends RecyclerView.Adapter {
         private ImageView right_dish_remove_iv;
         private ImageView right_dish_add_iv;
         private TextView right_dish_account_tv;
+        private ImageView mIvDash;
 
         public DishViewHolder(View itemView) {
             super(itemView);
@@ -195,6 +197,7 @@ public class RightDishAdapter extends RecyclerView.Adapter {
             right_dish_remove_iv = (ImageView)itemView.findViewById(R.id.right_dish_remove);
             right_dish_add_iv = (ImageView)itemView.findViewById(R.id.right_dish_add);
             right_dish_account_tv = (TextView) itemView.findViewById(R.id.right_dish_account);
+            mIvDash = (ImageView) itemView.findViewById(R.id.iv_dash);
         }
 
     }

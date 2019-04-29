@@ -1,5 +1,7 @@
 package com.kx.elemeapplication.model;
 
+import androidx.annotation.DrawableRes;
+
 import java.util.ArrayList;
 
 /**
@@ -8,14 +10,16 @@ import java.util.ArrayList;
 public class DishMenu {
     private String menuName;
     private ArrayList<Dish> dishList;
+    private int mResId;
 
     public DishMenu(){
 
     }
 
-    public DishMenu(String menuName,ArrayList dishList){
+    public DishMenu(String menuName, ArrayList dishList, @DrawableRes int resId){
         this.menuName = menuName;
         this.dishList = dishList;
+        mResId = resId;
     }
 
     public ArrayList<Dish> getDishList() {
@@ -34,4 +38,11 @@ public class DishMenu {
         this.menuName = menuName;
     }
 
+    public int getResId() {
+        return mResId;
+    }
+
+    public void setResId(int resId) {
+        mResId = resId;
+    }
 }

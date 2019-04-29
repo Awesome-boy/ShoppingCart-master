@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/right_dish_item"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="@dimen/item_dish_hight">
+
+    <com.github.siyamed.shapeimageview.RoundedImageView
+        android:id="@+id/iv_dash"
+        android:layout_width="@dimen/item_dish_image"
+        android:layout_height="@dimen/item_dish_image"
+        android:layout_marginLeft="@dimen/item_dish_horizontal_margin"
+        android:layout_marginTop="@dimen/item_dish_top_margin"
+        app:siBorderColor="@color/white"
+        app:siBorderWidth="@dimen/menu_image_radius"
+        app:siRadius="@dimen/menu_image_radius"
+        app:siSquare="true"/>
 
     <LinearLayout
         android:layout_width="match_parent"

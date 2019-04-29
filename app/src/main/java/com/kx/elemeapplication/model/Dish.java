@@ -1,5 +1,7 @@
 package com.kx.elemeapplication.model;
 
+import androidx.annotation.DrawableRes;
+
 /**
  *
  */
@@ -9,12 +11,21 @@ public class Dish {
     private double dishPrice;
     private int dishAmount;
     private int dishRemain;
+    private int mResId;
 
     public Dish(String dishName,double dishPrice,int dishAmount){
         this.dishName = dishName;
         this.dishPrice = dishPrice;
         this.dishAmount = dishAmount;
         this.dishRemain = dishAmount;
+    }
+
+    public Dish(String dishName, double dishPrice, int dishAmount, @DrawableRes int resId){
+        this.dishName = dishName;
+        this.dishPrice = dishPrice;
+        this.dishAmount = dishAmount;
+        this.dishRemain = dishAmount;
+        mResId = resId;
     }
 
 
@@ -50,6 +61,14 @@ public class Dish {
         this.dishRemain = dishRemain;
     }
 
+    public int getResId() {
+        return mResId;
+    }
+
+    public void setResId(int resId) {
+        mResId = resId;
+    }
+
     public int hashCode(){
         int code = this.dishName.hashCode()+(int)this.dishPrice;
         return code;
@@ -63,6 +82,7 @@ public class Dish {
                 this.dishName.equals(((Dish)obj).dishName) &&
                 this.dishPrice ==  ((Dish)obj).dishPrice &&
                 this.dishAmount == ((Dish)obj).dishAmount &&
+                this.mResId == ((Dish)obj).mResId &&
                 this.dishRemain == ((Dish)obj).dishRemain;
     }
 }

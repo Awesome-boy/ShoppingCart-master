@@ -1,7 +1,6 @@
 package com.kx.elemeapplication.view;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
@@ -10,6 +9,7 @@ import android.widget.TextView;
 import com.kx.elemeapplication.BaseActivity;
 import com.kx.elemeapplication.R;
 import com.kx.elemeapplication.wiget.EasyGoToolBar;
+import com.lidroid.xutils.view.annotation.ViewInject;
 
 import java.util.HashMap;
 
@@ -49,7 +49,10 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
     private static final String CHANNEL_JDPAY_WAP = "jdpay_wap";
     private HashMap<String,RadioButton> channels = new HashMap<>(3);
     private String payChannel;
-
+    @ViewInject(R.id.txt_name)
+    TextView tv_name;
+    @ViewInject(R.id.txt_address)
+    TextView tv_address;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_create_order;
@@ -99,6 +102,8 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
     @Override
     protected void initData() {
         total = getIntent().getDoubleExtra("total",0.0);
+        tv_name.setText("json");
+        tv_address.setText("WuHan.China");
         channels.put(CHANNEL_ALIPAY,mRbAlipay);
         channels.put(CHANNEL_WECHAT,mRbWechat);
         channels.put(CHANNEL_BFB,mRbBd);
@@ -115,8 +120,8 @@ public class CreateOrderActivity extends BaseActivity implements View.OnClickLis
                 selectPayChannel(view.getTag().toString());
                 break;
             case R.id.rl_addr:
-                Intent intent = new Intent(this,AddressListActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(this,AddressListActivity.class);
+//                startActivity(intent);
                 break;
         }
 

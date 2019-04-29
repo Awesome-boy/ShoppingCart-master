@@ -98,6 +98,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:maxLines="2"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="5dp"
                             android:textSize="13sp"
                             android:textColor="@color/gray"
                             />
